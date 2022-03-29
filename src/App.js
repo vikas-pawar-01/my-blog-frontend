@@ -6,10 +6,10 @@ import Footer from './pages/Footer';
 const App = () => {
 
   return (
-    <>
+    <div className='main'>
       <MenuRoutes />
       <Footer />
-    </>
+    </div>
   );
 }
 

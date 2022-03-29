@@ -1,6 +1,6 @@
 import Slider from "./Slider";
 
-const Home = () => {
+export const Home = () => {
     return (
         <Slider />
     )
