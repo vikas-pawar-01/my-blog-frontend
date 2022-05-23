@@ -1,0 +1,94 @@
+html,
+body {
+  height: 100%;
+}
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #000000cc; */
+}
+
+li.menu {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li.menu:first-child {
+  padding-left: 25%;
+}
+
+li.menu:last-child {
+  /* border-right: none; */
+}
+
+li.menu a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-bottom: 0.2rem;
+}
+
+li.menu a:hover:not(.active) {
+  background-color: white;
+  color: #333;
+}
+
+li.menu .active {
+  background-color: #ff0000;
+}
+
+.center {
+  margin: 5rem auto;
+  width: 70%;
+  border: 1px solid #9c9c9c;
+  padding: 1rem;
+}
+
+.btn-padding {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.btn-margin-top {
+  margin-top: 1rem;
+}
+
+.topnav-right {
+  float: right !important;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.black {
+  color: #000000;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.spinCenter {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columnColor {
+  background-color: #ff0000;
+  margin: 5px 5px;
+  padding: 5px;
+  color: white;
+  border-radius: 0.3rem;
+}
