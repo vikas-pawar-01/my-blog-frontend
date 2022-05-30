@@ -3,6 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import MenuRoutes from './shared/components/MenuRoutes';
 import './App.css';
 import Footer from './shared/pages/Footer';
+import Menu from './shared/components/Menu';
 
 const App = () => {
 
