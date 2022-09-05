@@ -9,20 +9,9 @@ const About = () => {
 
     return (
         <Modal>
-            <div
-                className="badge-base LI-profile-badge"
-                data-locale="en_US"
-                data-size="medium"
-                data-theme="light"
-                data-type="VERTICAL"
-                data-vanity="vikaspawar01"
-                data-version="v1">
-                <Link className="badge-base__link LI-simple-link"
-                    to="https://in.linkedin.com/in/vikaspawar01?trk=profile-badge">
-                    Vikas Pawar
-                </Link>
-            </div>
-
+            <a target="_blank" href="https://vikaspawar.info/#home">
+                About
+            </a>
         </Modal>
     )
 }

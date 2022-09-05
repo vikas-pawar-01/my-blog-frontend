@@ -5,9 +5,9 @@ const Contact = () => {
 
     return (
         <Modal>
-            <h3>Vikas Pawar</h3>
-            <p>Software Developer</p>
-            <p>India</p>
+            <a target="_blank" href="https://vikaspawar.info/#contact">
+                Contact
+            </a>
         </Modal>
     )
 }

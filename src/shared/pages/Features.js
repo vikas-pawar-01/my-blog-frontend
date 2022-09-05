@@ -6,6 +6,7 @@ import Timer from "../../features/pages/Timer";
 import Modal from "../components/Modal";
 import Toggle from "../../features/pages/Toggle";
 import Timeout from "../../features/pages/Timeout";
+import FormData from '../../features/pages/FormData';
 import { CounterButton } from "../../features/components/recoil/CounterButton";
 import { CounterMobx } from "../../features/components/mobx/CounterMobx";
 import { Counter } from "../../features/components/mobx/Counter";
@@ -30,6 +31,8 @@ const Features = () => {
             <Toggle />
             <hr />
             <Timeout />
+            <hr />
+            <FormData />
         </Modal>
     )
 }
