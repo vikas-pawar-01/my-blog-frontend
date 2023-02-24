@@ -1,40 +1,40 @@
 import React, { useEffect, useState } from "react";
+import { useRef } from "react";
 import { Button } from "react-bootstrap";
+import env from "react-dotenv";
 
 const FormData = () => {
-    const [todo, setTodo] = useState('');
+    const todoRef = useRef();
+    const [changed, setChanged] = useState(true);
     const [todos, setTodos] = useState([]);
-
+    
     useEffect(() => {
 
         const fetchData = async () => {
-            const response = await fetch( 'http://localhost:8000/api/todos' );
+            const response = await fetch( `${env.NODE_API}api/todos` );
             const responseData = await response.json();            
             setTodos(responseData.todos);
         }
 
         fetchData();
-    }, []);
-
-    const todoChangeHandler = event => {
-        setTodo(event.target.value);
-    }
+    }, [changed]);
 
     const handleSave = async event => {
-        event.preventDefault();
-
-        if( todo.trim().length === 0 ) {
+        event.preventDefault();        
+        
+        if (todoRef.current.value.trim().length === 0) {
             return false;
         }
 
         try {
+            const url = env.NODE_API;
             const response = await fetch(
-                'http://localhost:8000/api/todo',
+                `${url}api/todo`,
                 {
                     method: 'POST',
                     body: JSON.stringify(
                         {
-                            name: todo,
+                            name: todoRef.current.value,
                         }
                     ),
                     headers: {
@@ -45,8 +45,6 @@ const FormData = () => {
 
             const responseData = await response.json();
             
-            console.log(responseData);
-
             if (!response.ok) {
                 throw new Error(responseData.message);
             }
@@ -54,19 +52,20 @@ const FormData = () => {
             console.log(err);
         }
 
-        setTodo('');
+        todoRef.current.value = '';
+        setChanged( prev => !prev);
     }
 
     return (
         <>
             <p>Todo: </p>
-            <input type='text' id='name' name='name' onChange={todoChangeHandler} value={todo}/>
+            <input type='text' id='name' name='name' ref={todoRef} />
             &nbsp;&nbsp;
             <Button onClick={handleSave}>Save</Button>
             <p>List Todo</p>
             <ul>
                 {todos.map( todo => {
-                    return <li key={todo.key}>{todo.name}</li>
+                    return <li key={todo.id}>{todo.name}</li>
                 })}
             </ul>
         </>
