@@ -9,7 +9,7 @@ const About = () => {
 
     return (
         <Modal>
-            <a target="_blank" href="https://vikaspawar.info/#home">
+            <a target="_blank" href="https://vikaspawar.co.in/#home">
                 About
             </a>
         </Modal>

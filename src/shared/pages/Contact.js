@@ -5,7 +5,7 @@ const Contact = () => {
 
     return (
         <Modal>
-            <a target="_blank" href="https://vikaspawar.info/#contact">
+            <a target="_blank" href="https://vikaspawar.co.in/#contact">
                 Contact
             </a>
         </Modal>
